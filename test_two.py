@@ -1,3 +1,6 @@
+import math
+
+
 def get_average(li):
     sum = 0
     for num in li:
@@ -5,9 +8,5 @@ def get_average(li):
     mean = sum / len(li)
     return mean
 
-def get_average():
-    sum=0
-    for num in li:
-        sum+=num
-    mean = sum/len(li)
-    return 
+def test_get_average_empty_list():
+    assert math.isnan(get_average([]))
