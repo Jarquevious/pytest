@@ -26,9 +26,22 @@ if __name__ == "__main__":
 @pytest.fixture
 def test_extract_position():
     '''Returns an empty instance of extract position'''
-    return pos == 0
+    line = []
+    return extract_position(line) 
 
-def test_extract_position_2():
+def test_extract_position_2(test_extract_position):
     '''Return if bug is in line'''
     line = 'debug'
     assert extract_position(line) == None
+
+def test_extract_position_3(test_extract_position):
+    '''Return if bug is in line'''
+    line = 'error'
+    assert extract_position(line) == None
+
+def test_extract_position_4(test_extract_position):
+    '''Return if x is in line'''
+    line = ['x:']
+    assert extract_position(line) == None
+
+
